@@ -40,9 +40,6 @@ fn main() -> Result<()> {
         })?;
     }
 
-    println!("Hello world!");
-
-
     // ANCHOR: loop
     loop {
         // Enable interrupt and wait for new notificaton
@@ -50,7 +47,7 @@ fn main() -> Result<()> {
         notification.wait(esp_idf_svc::hal::delay::BLOCK);
         println!("Button pressed!");
         // Generates random rgb values and sets them in the led.
-        random_light(&mut led);
+        let _ = random_light(&mut led);
     }
     // ANCHOR_END: loop
 }
